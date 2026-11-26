@@ -1,0 +1,126 @@
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.title-group {
+  text-align: left;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 4px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.difficulty-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.difficulty-control strong {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.difficulty-control input[type='range'] {
+  accent-color: var(--accent);
+  cursor: pointer;
+  width: 130px;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+}
+
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 96px;
+  padding: 8px 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.stat-pill.best {
+  border-color: rgba(245, 158, 11, 0.45);
+  background-color: rgba(245, 158, 11, 0.08);
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.stat-pill.best .stat-value {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .scoreboard {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .title-group {
+    text-align: center;
+  }
+
+  .title::after {
+    margin-inline: auto;
+  }
+
+  .controls-group {
+    justify-content: space-between;
+  }
+}
